@@ -19,11 +19,25 @@ def main() -> None:
         space_sdk="gradio",
         exist_ok=True,
     )
+    readme_hf = (ROOT / "README_HF.md").read_text(encoding="utf-8")
+    api.upload_file(
+        path_or_fileobj=readme_hf.encode("utf-8"),
+        path_in_repo="README.md",
+        repo_id=SPACE_ID,
+        repo_type="space",
+    )
     upload_folder(
         folder_path=ROOT,
         repo_id=SPACE_ID,
         repo_type="space",
-        ignore_patterns=[".git/*", "venv/*", "__pycache__/*", ".ipynb_checkpoints/*"],
+        ignore_patterns=[
+            ".git/*",
+            "venv/*",
+            "__pycache__/*",
+            ".ipynb_checkpoints/*",
+            "notebook.ipynb",
+            "deploy_hf_space.py",
+        ],
     )
     print(f"https://huggingface.co/spaces/{SPACE_ID}")
 
