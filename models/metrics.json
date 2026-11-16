@@ -1,0 +1,28 @@
+{
+  "best_params": {
+    "clf__max_depth": 10,
+    "clf__min_samples_leaf": 1,
+    "clf__n_estimators": 138
+  },
+  "cv_best_f1_macro": 0.21688023818017332,
+  "test_accuracy": 0.23763736263736263,
+  "test_f1_macro": 0.2277550070479127,
+  "feature_columns": [
+    "hour",
+    "day_of_week",
+    "month",
+    "is_weekend",
+    "cash_type",
+    "has_card"
+  ],
+  "classes": [
+    "Americano",
+    "Americano with Milk",
+    "Cappuccino",
+    "Cocoa",
+    "Cortado",
+    "Espresso",
+    "Hot Chocolate",
+    "Latte"
+  ]
+}
