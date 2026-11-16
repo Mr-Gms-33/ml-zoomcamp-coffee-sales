@@ -174,10 +174,25 @@ Document the exact port and entrypoint in `Dockerfile` when added.
 | Local Docker | `Dockerfile` + README steps above |
 | Cloud (optional) | Live URL **or** screenshot/video of `curl` / Swagger UI |
 
-Examples peers used: Google Cloud Run, Hugging Face Spaces (Gradio), Render, Streamlit Cloud. Add your URL here when deployed:
+Examples peers used: Google Cloud Run, Hugging Face Spaces (Gradio), Render, Streamlit Cloud.
 
-- **Live API:** _TBD_
-- **Demo media:** _TBD (e.g. `docs/demo.png` or link to screen recording)_
+- **GitHub (source):** https://github.com/Mr-Gms-33/ml-zoomcamp-coffee-sales  
+- **Gradio UI (Hugging Face Space):** https://huggingface.co/spaces/Mr-Gms-33/coffee-sales-midterm — create or sync via steps below  
+- **Flask API (Render):** [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Mr-Gms-33/ml-zoomcamp-coffee-sales) → after deploy, URL like `https://coffee-sales-api.onrender.com`
+
+### Hugging Face Space (Gradio — recommended for reviewers)
+
+1. Sign in at [huggingface.co](https://huggingface.co) and run `pip install huggingface_hub` then `hf auth login`.
+2. From this folder: `python deploy_hf_space.py` (uploads `app.py`, model, and data).
+3. Or manually: **Create Space** → SDK **Gradio** → link GitHub repo → set **App file** to `app.py`.
+
+Space README metadata template: `README_HF.md` (copy to Space `README.md` if needed).
+
+### Render (Flask API in Docker)
+
+Repo includes `render.yaml`. Use the Deploy button above or connect the GitHub repo in the Render dashboard (Web Service → Docker).
+
+**Local API test against cloud:** `python predict-test.py https://YOUR-SERVICE.onrender.com/predict`
 
 ---
 
