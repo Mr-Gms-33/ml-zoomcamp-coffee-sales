@@ -177,16 +177,22 @@ Document the exact port and entrypoint in `Dockerfile` when added.
 Examples peers used: Google Cloud Run, Hugging Face Spaces (Gradio), Render, Streamlit Cloud.
 
 - **GitHub (source):** https://github.com/Mr-Gms-33/ml-zoomcamp-coffee-sales  
-- **Gradio UI (Hugging Face Space):** https://huggingface.co/spaces/Mr-Gms-33/coffee-sales-midterm — create or sync via steps below  
-- **Flask API (Render):** [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Mr-Gms-33/ml-zoomcamp-coffee-sales) → after deploy, URL like `https://coffee-sales-api.onrender.com`
+- **Model (Hugging Face):** https://huggingface.co/RoxMoni/coffee-sales-classifier  
+- **Hugging Face Space (static landing + deploy links):** https://huggingface.co/spaces/RoxMoni/coffee-sales-midterm  
+- **Flask API (Render — interactive predictions):** [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Mr-Gms-33/ml-zoomcamp-coffee-sales) → after deploy, URL like `https://coffee-sales-api.onrender.com`
 
-### Hugging Face Space (Gradio — recommended for reviewers)
+### Hugging Face Gradio (when your account can host compute)
 
-1. Sign in at [huggingface.co](https://huggingface.co) and run `pip install huggingface_hub` then `hf auth login`.
-2. From this folder: `python deploy_hf_space.py` (uploads `app.py`, model, and data).
-3. Or manually: **Create Space** → SDK **Gradio** → link GitHub repo → set **App file** to `app.py`.
+New free HF accounts currently get **402** for Gradio/Docker Spaces (needs **PRO**, **ZeroGPU** with account age ≥30 days, or a [community grant](https://huggingface.co/docs/hub/spaces-overview)).
 
-Space README metadata template: `README_HF.md` (copy to Space `README.md` if needed).
+When eligible:
+
+```bash
+hf auth login
+python deploy_hf_space.py
+```
+
+Target: **https://huggingface.co/spaces/RoxMoni/coffee-sales-midterm-gradio** (set `HF_SPACE_ID` if you use another name). Metadata template: `README_HF.md`.
 
 ### Render (Flask API in Docker)
 

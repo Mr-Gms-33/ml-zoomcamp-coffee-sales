@@ -7,7 +7,7 @@ from pathlib import Path
 
 from huggingface_hub import HfApi, upload_folder
 
-SPACE_ID = os.environ.get("HF_SPACE_ID", "Mr-Gms-33/coffee-sales-midterm")
+SPACE_ID = os.environ.get("HF_SPACE_ID", "RoxMoni/coffee-sales-midterm")
 ROOT = Path(__file__).resolve().parent
 
 
@@ -17,6 +17,7 @@ def main() -> None:
         repo_id=SPACE_ID,
         repo_type="space",
         space_sdk="gradio",
+        space_hardware="zero-a10g",
         exist_ok=True,
     )
     readme_hf = (ROOT / "README_HF.md").read_text(encoding="utf-8")
